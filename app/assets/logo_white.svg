@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="KTech Solutions">
+  <g fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round">
+    <polygon points="50,15 85,50 50,85 15,50"/>
+    <line x1="15" y1="50" x2="4" y2="39"/>
+    <line x1="15" y1="50" x2="4" y2="61"/>
+    <line x1="85" y1="50" x2="96" y2="39"/>
+    <line x1="85" y1="50" x2="96" y2="61"/>
+    <line x1="50" y1="15" x2="39" y2="4"/>
+    <line x1="50" y1="15" x2="61" y2="4"/>
+    <line x1="50" y1="85" x2="39" y2="96"/>
+    <line x1="50" y1="85" x2="61" y2="96"/>
+  </g>
+  <g fill="#FFFFFF">
+    <circle cx="4" cy="39" r="3"/>
+    <circle cx="4" cy="61" r="3"/>
+    <circle cx="96" cy="39" r="3"/>
+    <circle cx="96" cy="61" r="3"/>
+    <circle cx="39" cy="4" r="3"/>
+    <circle cx="61" cy="4" r="3"/>
+    <circle cx="39" cy="96" r="3"/>
+    <circle cx="61" cy="96" r="3"/>
+  </g>
+  <polygon points="50,32 68,50 50,68 32,50" fill="#FFFFFF"/>
+</svg>

@@ -1,0 +1,34 @@
+# Configuration de déploiement pour Render (https://render.com).
+#
+# Étapes pour déployer :
+#   1. Poussez ce repo sur GitHub/GitLab et créez un nouveau "Blueprint" sur Render pointant
+#      dessus (Render détecte automatiquement ce fichier).
+#   2. Dans le dashboard Render du service, section "Environment" > "Secret Files", ajoutez un
+#      fichier au chemin `.streamlit/secrets.toml` avec le contenu de
+#      `.streamlit/secrets.toml.example` (personnalisé — identifiants réels, clé de cookie
+#      unique). Ce fichier n'est jamais commité dans le repo ni dans l'image Docker.
+#   3. Le disque persistant `fraud-app-state` conserve l'historique des prédictions et des runs
+#      d'entraînement entre les redéploiements (contrairement au disque éphémère par défaut).
+#
+# Limite connue : le disque persistant Render n'est disponible que sur les plans payants
+# (pas de "free tier" pour cette fonctionnalité).
+
+services:
+  - type: web
+    name: fraud-detection-app
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: starter
+    region: frankfurt
+    healthCheckPath: /_stcore/health
+    autoDeployTrigger: commit
+    envVars:
+      - key: FRAUD_APP_PERSIST_DIR
+        value: /app/state
+    disk:
+      name: fraud-app-state
+      mountPath: /app/state
+      sizeGB: 1
+    dockerBuildArgs:
+      SKIP_TRAIN_AT_BUILD: "true"

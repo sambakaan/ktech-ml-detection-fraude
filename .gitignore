@@ -1,0 +1,30 @@
+# Environnements virtuels
+venv/
+.venv/
+env/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# Modèle entraîné : régénéré via `python ml/train.py` (ou au build Docker)
+models/*.pkl
+models/*.joblib
+
+# Historique des prédictions et des runs d'entraînement, générés à l'exécution
+data/predictions_history.csv
+data/training_runs_history.csv
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Git / éditeurs / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/

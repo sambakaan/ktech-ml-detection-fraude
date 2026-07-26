@@ -1,0 +1,27 @@
+services:
+  fraud-app:
+    build:
+      context: .
+      args:
+        SKIP_TRAIN_AT_BUILD: "false"
+    image: fraud-detection-app:latest
+    container_name: fraud_detection_app
+    ports:
+      - "${PORT:-8501}:${PORT:-8501}"
+    environment:
+      - PORT=${PORT:-8501}
+      - FRAUD_APP_PERSIST_DIR=/app/state
+    volumes:
+      # Authentification (streamlit-authenticator) : copiez d'abord
+      # .streamlit/secrets.toml.example vers .streamlit/secrets.toml avant `docker compose up`.
+      - ./.streamlit/secrets.toml:/app/.streamlit/secrets.toml:ro
+      - fraud_state:/app/state
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 1g
+
+volumes:
+  fraud_state:

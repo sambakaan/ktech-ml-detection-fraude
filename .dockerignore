@@ -1,0 +1,34 @@
+# Environnements virtuels
+venv/
+.venv/
+env/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# Modèle : régénéré à l'intérieur de l'image lors du build
+models/fraud_model.pkl
+
+# Historique des prédictions et des runs d'entraînement (données de dev locales — ne doivent
+# pas fuiter dans l'image ; en production ils vivent dans le volume monté sur FRAUD_APP_PERSIST_DIR)
+data/predictions_history.csv
+data/training_runs_history.csv
+
+# Git / éditeurs / OS
+.git/
+.gitignore
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Jupyter / Streamlit
+.ipynb_checkpoints/
+.streamlit/secrets.toml
+
+# Divers
+*.zip
+README.md

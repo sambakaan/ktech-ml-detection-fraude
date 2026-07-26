@@ -1,0 +1,12 @@
+# Empêche Git de convertir les fins de ligne (LF/CRLF) sur les fichiers binaires,
+# ce qui corromprait leur contenu (notamment fraud_model.pkl sous Windows).
+
+*.pkl   binary
+*.joblib binary
+*.csv   -text
+*.xlsx  binary
+*.xls   binary
+*.pdf   binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" width="60" height="60">
+  <defs>
+    <linearGradient id="ktGradTile" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1FAE7A"/>
+      <stop offset="100%" stop-color="#3462AC"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" stroke="url(#ktGradTile)" stroke-width="2" stroke-linecap="round" opacity="0.35">
+    <polygon points="30,9 51,30 30,51 9,30"/>
+  </g>
+  <polygon points="30,19.2 40.8,30 30,40.8 19.2,30" fill="url(#ktGradTile)" opacity="0.35"/>
+</svg>
